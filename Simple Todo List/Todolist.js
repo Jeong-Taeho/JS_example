@@ -1,7 +1,4 @@
-//params.$target : 해당 컴포넌트가 추가 될 DOM 엘리먼트
-//params.initialState : 해당 컴포넌트의 초기 상태
-
-function todoList( {$target, initialState} ) {
+export default function todoList( {$target, initialState} ) {
     const $todoList = document.createElement('div');
     $target.appendChild($todoList)
 

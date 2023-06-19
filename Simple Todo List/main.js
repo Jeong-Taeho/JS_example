@@ -1,4 +1,8 @@
-const initialState = JSON.parse(storage.getItem('todos') || '[]')
+import App from "./App.js"
+import { getItem } from "./Storage.js"
+
+
+const initialState = getItem('todos', [])
 
 const $main = document.querySelector('.app')
 
