@@ -1,4 +1,4 @@
-export default function todoList( {$target, initialState, onListClick, onRemove} ) {
+export default function todoList( {$target, initialState, onListClick, onDeleteBtn} ) {
     const $todoList = document.createElement('div');
     $target.appendChild($todoList)
 
@@ -14,21 +14,17 @@ export default function todoList( {$target, initialState, onListClick, onRemove}
     this.render = () => {
         $todoList.innerHTML = `
         <ul>
-            ${this.state.map((todo,id) => `<li data-id=${id} style="text-decoration: ${todo.isCompleted === true ? 
-                'line-through' : 'none'}"> ${todo.text}</li> <button data-id=${id}>삭제</button>`).join('')}
+            ${this.state.map(( {text,isCompleted}, id) => `<li data-id=${id} style="text-decoration: ${isCompleted === true ? 
+                'line-through' : 'none'}"> ${text} </li>`).join('')}
         </ul>`
 
+        const $button = document.createElement('button')
+        // li.appendChild($button)
+        dlasdmal;smasl;dmsamd;almdsma;LockManager;
         document.querySelectorAll('li').forEach(($list) => {
             $list.addEventListener('click', (e) => {
                 const {id} = e.target.dataset
                 onListClick(id)
-            })
-        })
-
-        document.querySelectorAll('button').forEach(($remove) => {
-            $remove.addEventListener('click', (e) => {
-                const id = e.target.dataset.id
-                onRemove(id)
             })
         })
     }
