@@ -5,6 +5,8 @@ import { getItem, setItem } from "./Storage.js"
 import TodoCount from "./TodoCount.js"
 
 export default function App({ $target, initialState }) {
+
+    TextDecoderStream.apply.
     
     new Header({
         $target,
@@ -27,17 +29,11 @@ export default function App({ $target, initialState }) {
         initialState,
         onListClick: (id) => {
             const state = [...TodoList.state]
+            console.log(id)
             state[id].isCompleted = !state[id].isCompleted
             TodoList.setState(state)
             todoCount.setState(state)
         },
-        // onRemove: (id) => {
-        //     const state = [...TodoList.state]
-        //     state.splice(state[id],1)
-        //     TodoList.setState(state)
-        //     setItem('todos',JSON.stringify(state))
-        //     todoCount.setState(state)
-        // }
     })
 
     const todoCount = new TodoCount({
